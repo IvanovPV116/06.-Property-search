@@ -38,15 +38,13 @@ public class HouseService {
         return result;
     }
 
-    public int findAllByHousePrice(int housePrice /*HouseRepository[] a,*/ int minHousePrice, int maxHousePrice) {
+    public int findAllByHousePrice(House[] a, int minHousePrice, int maxHousePrice) {
         ArrayList<House> result = new ArrayList<House>();
 
-        for (House house : repository.getHouses()) {{
-            if (house.getHousePrice()==(housePrice)) {
-
+        for (House house : repository.getHouses()) {
+            if (a == null || (minHousePrice < 0 || maxHousePrice < 0) || (minHousePrice > maxHousePrice)) {
+                throw new IllegalArgumentException();
             }
-
-
 
             int start = 0;
             for (int i = 0; i < a.length; i++) {
@@ -67,7 +65,7 @@ public class HouseService {
 
         }
 
-            result.add(house);
+          return 0;
     }
 
     public void add(House house) {

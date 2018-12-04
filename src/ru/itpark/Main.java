@@ -25,11 +25,12 @@ public class Main {
         System.out.println(district);
 
         System.out.println("\n");
+        List<House> a = service.findAllByHousePrice(a,1,1);
 
 
         System.out.println(service.getSorted(new ComparatorHousePrice()));
 
 
     }
-    }
+}
 
